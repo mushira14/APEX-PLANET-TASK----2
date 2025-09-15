@@ -1,0 +1,158 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+/* 🌐 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #00c4ff;
+}
+
+/* 📩 Sections */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+.contact-section, .todo-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 8px 30px rgba(0,0,0,0.5);
+}
+h1 { font-size: 2rem; margin-bottom: 10px; }
+.subtitle { margin-bottom: 25px; color: #ddd; }
+
+/* 📩 Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form-group { text-align: left; }
+label { display: block; margin-bottom: 6px; font-weight: 500; }
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.85);
+  color: #333;
+  transition: all 0.3s ease;
+}
+input:focus, textarea:focus {
+  background: #fff;
+  border: 2px solid #00c4ff;
+  box-shadow: 0px 0px 8px rgba(0,196,255,0.7);
+}
+.btn-submit {
+  padding: 12px;
+  background: linear-gradient(135deg, #00c4ff, #0084ff);
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+.btn-submit:hover {
+  background: linear-gradient(135deg, #0084ff, #00c4ff);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0,196,255,0.6);
+}
+.btn-submit:active { transform: scale(0.95); }
+
+/* ✅ To-Do */
+.todo-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#taskInput {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+#taskList {
+  list-style: none;
+  padding: 0;
+}
+#taskList li {
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+#taskList li:hover {
+  transform: scale(1.02);
+  background: #e8f7ff;
+}
+.delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.delete-btn:hover { color: darkred; }
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; }
+  .nav-links { flex-direction: column; margin-top: 10px; }
+}
